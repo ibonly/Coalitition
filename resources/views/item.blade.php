@@ -10,11 +10,24 @@
 
 <form id="process_form">
     Product name: <input type="text" name="product_name" id="product_name">
-    Quantity in stock: <input type="text" name="quantity" id="quantoty">
+    Quantity in stock: <input type="text" name="quantity" id="quantity">
     Price per item <input type="text" name="price" id="price">
 
-    <button type="submit" name="submit" id="form_submit">Submit</button>
+    <button type="submit" name="submit" id="form_submit" class="btn btn-success">Submit</button>
 </form>
+    
+    <div class="output">
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price Per Item</th>
+                <th>Total</th>
+            </tr>
+            <tr class="add_data">
+            </tr>
+        </table>
+    </div>
 
 
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
@@ -39,7 +52,7 @@ $(document).ready(function(){
             type: 'POST',
             data: data
         }).done(function(data) {
-            console.log(data)
+            
         })
 
         return false;
