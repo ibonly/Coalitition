@@ -15,5 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/new-item', function () {
+    return view('item');
+});
 
-Route::post('/new-item', 'ItemController@store');
+
+Route::post('/new-item', [
+    'uses' => 'ItemController@store',
+    'as' => 'new-item'
+]);
